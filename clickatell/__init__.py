@@ -42,7 +42,7 @@ class Transport:
         """
         response['body'] = json.loads(response['body'])
         response['messages'] = response['body']['messages']
-        response['error'] = response['body']['error']
+        response['error'] = response['body']['messages'][0]['error']
         del response['body']
         return response
 
